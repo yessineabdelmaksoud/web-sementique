@@ -136,7 +136,7 @@ Nous avons modélisé l'ontologie à l'aide du logiciel **Protégé**.
 > Voici quelques captures d’écran montrant la structure de l’ontologie dans Protégé :
 
 #### 1. Vue des classes
-![Vue des classes](./capture/classe.png)
+![Vue des classes](../capture/classe.png)
 
 #### 2. Propriétés objet
 ![Propriétés objet](./captures/proprietes_objet.png)
