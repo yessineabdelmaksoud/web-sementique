@@ -1,0 +1,39 @@
+Acteurs : Étudiant, Enseignant, Administratif
+
+Structures : Université, Institut, Lycée, Département
+
+Formations : Licence, Master, Doctorat, Filière (Informatique, Médecine...)
+
+Éléments pédagogiques : Cours, Matière, Module, Examen
+
+------------------------------------------------------------------------------  
+
+Système Éducatif Tunisien
+├── Personnes
+│   ├── Étudiant
+│   ├── Enseignant
+│   └── Administratif
+├── Établissements
+│   ├── Université
+│   ├── Institut Supérieur
+│   └── Lycée
+└── Formation
+    ├── Cycle
+    │   ├── Licence
+    │   ├── Master
+    │   └── Doctorat
+    └── Filière
+        ├── Informatique
+        ├── Médecine
+        └── Génie Civil
+------------------------------------------------------------------------------  
+
+Identifier les relations principales :
+
+Un Étudiant est inscrit dans une Filière
+
+Un Enseignant enseigne un Cours
+
+Une Université propose plusieurs Filières
+
+Un Cours fait partie de une Filière

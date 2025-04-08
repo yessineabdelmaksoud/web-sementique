@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/pc/ontologies/2025/3/untitled-ontology-13/"
+     xml:base="http://www.semanticweb.org/pc/ontologies/2025/3/untitled-ontology-13/"
+     xmlns:edu="http://www.example.org/education-tunisie#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.example.org/education-tunisie#"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/education-tunisie#aCycle -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/education-tunisie#aCycle">
+        <rdfs:domain rdf:resource="http://www.example.org/education-tunisie#Formation"/>
+        <rdfs:range rdf:resource="http://www.example.org/education-tunisie#Cycle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#aFiliere -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/education-tunisie#aFiliere">
+        <rdfs:domain rdf:resource="http://www.example.org/education-tunisie#Formation"/>
+        <rdfs:range rdf:resource="http://www.example.org/education-tunisie#Filière"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#administre -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/education-tunisie#administre">
+        <rdfs:domain rdf:resource="http://www.example.org/education-tunisie#Administratif"/>
+        <rdfs:range rdf:resource="http://www.example.org/education-tunisie#Établissements"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#enseigneDans -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/education-tunisie#enseigneDans">
+        <rdfs:domain rdf:resource="http://www.example.org/education-tunisie#Enseignant"/>
+        <rdfs:range rdf:resource="http://www.example.org/education-tunisie#Établissements"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#suitFormation -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/education-tunisie#suitFormation">
+        <rdfs:domain rdf:resource="http://www.example.org/education-tunisie#Étudiant"/>
+        <rdfs:range rdf:resource="http://www.example.org/education-tunisie#Formation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#étudieDans -->
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/education-tunisie#étudieDans">
+        <rdfs:domain rdf:resource="http://www.example.org/education-tunisie#Étudiant"/>
+        <rdfs:range rdf:resource="http://www.example.org/education-tunisie#Établissements"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/education-tunisie#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/education-tunisie#age">
+        <rdfs:domain rdf:resource="http://www.example.org/education-tunisie#Étudiant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#annéeInscription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/education-tunisie#annéeInscription">
+        <rdfs:domain rdf:resource="http://www.example.org/education-tunisie#Étudiant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#nom -->
+
+    <owl:DatatypeProperty rdf:about="http://www.example.org/education-tunisie#nom">
+        <rdfs:domain rdf:resource="http://www.example.org/education-tunisie#Personnes"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Administratif -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Administratif">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Personnes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Cycle -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Cycle">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Formation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Doctorat -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Doctorat">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Cycle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Enseignant -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Enseignant">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Personnes"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Filière -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Filière">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Formation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Formation -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Formation"/>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Génie_Civil -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Génie_Civil">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Filière"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Informatique -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Informatique">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Filière"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Institut_Supérieur -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Institut_Supérieur">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Établissements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Licence -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Licence">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Cycle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Lycée -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Lycée">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Établissements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Master -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Master">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Cycle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Médecine -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Médecine">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Filière"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Personnes -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Personnes"/>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Université -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Université">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Établissements"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Établissements -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Établissements"/>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Étudiant -->
+
+    <owl:Class rdf:about="http://www.example.org/education-tunisie#Étudiant">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/education-tunisie#Personnes"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.example.org/education-tunisie#Enseignant1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/education-tunisie#Enseignant1">
+        <rdf:type rdf:resource="http://www.example.org/education-tunisie#Enseignant"/>
+        <edu:enseigneDans rdf:resource="http://www.example.org/education-tunisie#institut1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#admin1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/education-tunisie#admin1">
+        <rdf:type rdf:resource="http://www.example.org/education-tunisie#Administratif"/>
+        <edu:administre rdf:resource="http://www.example.org/education-tunisie#etab1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#cycle14 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/education-tunisie#cycle14">
+        <rdf:type rdf:resource="http://www.example.org/education-tunisie#Licence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#etab1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/education-tunisie#etab1">
+        <rdf:type rdf:resource="http://www.example.org/education-tunisie#Établissements"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#etudiant1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/education-tunisie#etudiant1">
+        <rdf:type rdf:resource="http://www.example.org/education-tunisie#Étudiant"/>
+        <edu:suitFormation rdf:resource="http://www.example.org/education-tunisie#formation1"/>
+        <edu:étudieDans rdf:resource="http://www.example.org/education-tunisie#institut1"/>
+        <edu:age rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">21</edu:age>
+        <edu:annéeInscription rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2004-04-12T13:20:00-05:00</edu:annéeInscription>
+        <edu:nom>&quot;ahmed&quot;</edu:nom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#filier1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/education-tunisie#filier1">
+        <rdf:type rdf:resource="http://www.example.org/education-tunisie#Filière"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#formation1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/education-tunisie#formation1">
+        <rdf:type rdf:resource="http://www.example.org/education-tunisie#Formation"/>
+        <edu:aCycle rdf:resource="http://www.example.org/education-tunisie#cycle14"/>
+        <edu:aFiliere rdf:resource="http://www.example.org/education-tunisie#filier1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.example.org/education-tunisie#institut1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.example.org/education-tunisie#institut1">
+        <rdf:type rdf:resource="http://www.example.org/education-tunisie#Institut_Supérieur"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
