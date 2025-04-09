@@ -136,7 +136,7 @@ Nous avons modélisé l'ontologie à l'aide du logiciel **Protégé**.
 > Voici quelques captures d’écran montrant la structure de l’ontologie dans Protégé :
 
 #### 1. Vue des classes
-![Vue des classes](systeme-educatif-tn\capture\classe.png)
+![classe](https://github.com/yessineabdelmaksoud/web-sementique/blob/main/systeme-educatif-tn/capture/classe.png)
 
 #### 2. Propriétés objet
 ![Propriétés objet](./captures/proprietes_objet.png)
