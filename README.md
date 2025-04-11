@@ -242,4 +242,7 @@ WHERE {
 
 > Nous avons aussi testé nos requêtes SPARQL via un script Python utilisant la bibliothèque rdflib
 ![Individus](https://github.com/yessineabdelmaksoud/web-sementique/blob/main/systeme-educatif-tn/capture/requetes.png)
-
+---
+## Visualisation de l'ontologie :
+> Voici une représentation visuelle de l'ontologie du education en tunisie :
+![Individus](https://github.com/yessineabdelmaksoud/web-sementique/blob/main/systeme-educatif-tn/capture/view.png)
