@@ -303,3 +303,128 @@ L’ontologie a été enrichie par des **restrictions OWL** sur les propriétés
 - `age` : exactement **1 valeur**, de type `xsd:integer`, pour un `Étudiant`
 - `annéeInscription` : exactement **1 valeur**, de type `xsd:gYear`, pour un `Étudiant`
 
+
+# Ontologie du Système Éducatif en Tunisie avec SWRL
+
+Ce projet présente une ontologie OWL modélisant le système éducatif tunisien, enrichie par des règles d'inférence SWRL pour représenter des connaissances implicites.
+
+## Structure de l'Ontologie
+
+### Classes principales
+- **Personnes** : Classe racine pour tous les acteurs du système éducatif
+  - **Étudiant** : Apprenants inscrits dans un établissement
+    - **EtudiantLicence** : Étudiants en premier cycle (inféré par SWRL)
+    - **EtudiantChercheur** : Doctorants
+  - **Enseignant** : Personnel académique
+    - **EnseignantPolyvalent** : Enseignants travaillant dans plusieurs établissements (inféré par SWRL)
+  - **Administratif** : Personnel de gestion
+
+- **Établissements** : Structures d'enseignement
+  - **Université** : Offrant tous les cycles
+  - **Institut_Supérieur** : Offrant licence et master
+  - **Lycée** : Enseignement secondaire
+
+- **Formation** : Programmes d'études
+  - **Cycle** : Niveaux d'études
+    - **Licence**
+    - **Master**
+    - **Doctorat**
+  - **Filière** : Domaines d'études
+    - **Informatique**
+    - **Médecine**
+    - **Génie_Civil**
+
+### Relations (Object Properties)
+- **étudieDans/aEtudiant** : Relie étudiants et établissements
+- **enseigneDans/aEnseignant** : Relie enseignants et établissements
+- **administre/estAdministréPar** : Relie administratifs et établissements
+- **suitFormation/estSuiviPar** : Relie étudiants et formations
+- **aCycle** : Associe une formation à son cycle
+- **aFiliere** : Associe une formation à sa filière
+- **estCollègueDe** : Relation inférée entre enseignants (symétrique)
+- **mêmeAdministration** : Relation inférée entre établissements (symétrique, transitive)
+
+### Attributs (Data Properties)
+- **nom** : Nom d'une personne (string)
+- **age** : Âge d'un étudiant (integer)
+- **annéeInscription** : Date d'inscription (dateTime)
+
+## Règles SWRL
+
+L'ontologie inclut quatre règles SWRL pour enrichir les capacités d'inférence :
+
+### 1. Identification des Étudiants en Licence
+```
+Étudiant(?e) ^ suitFormation(?e, ?f) ^ aCycle(?f, ?c) ^ Licence(?c) 
+-> EtudiantLicence(?e)
+```
+**Fonction** : Classifie automatiquement les étudiants inscrits en Licence
+
+### 2. Établissements sous même administration
+```
+Administratif(?a) ^ administre(?a, ?e1) ^ administre(?a, ?e2) ^ differentFrom(?e1, ?e2) 
+-> mêmeAdministration(?e1, ?e2)
+```
+**Fonction** : Relie les établissements administrés par la même personne
+
+### 3. Détection des collègues
+```
+Enseignant(?e1) ^ Enseignant(?e2) ^ enseigneDans(?e1, ?etab) ^ enseigneDans(?e2, ?etab) 
+^ differentFrom(?e1, ?e2) -> estCollègueDe(?e1, ?e2)
+```
+**Fonction** : Établit automatiquement des relations de collègues entre enseignants
+
+### 4. Identification des enseignants polyvalents
+```
+Enseignant(?ens) ^ enseigneDans(?ens, ?etab1) ^ enseigneDans(?ens, ?etab2) 
+^ differentFrom(?etab1, ?etab2) -> EnseignantPolyvalent(?ens)
+```
+**Fonction** : Identifie les enseignants qui travaillent dans plusieurs établissements
+
+## Contraintes OWL
+
+L'ontologie inclut diverses contraintes OWL :
+
+- Un étudiant suit exactement une formation
+- Un enseignant enseigne dans au moins un établissement
+- Un administratif gère au maximum un établissement
+- Les classes Formation, Personnes et Établissements sont disjointes
+- Les doctorants suivent uniquement des formations de doctorat
+- Les universités peuvent proposer tous les cycles
+- Les instituts supérieurs proposent uniquement licence et master
+- Les lycées n'offrent pas de formations supérieures
+
+## Exemples d'individus
+
+L'ontologie contient plusieurs individus pour illustrer son fonctionnement :
+- **etudiant1** : Un étudiant nommé "ahmed", 21 ans
+- **Enseignant1**, **Enseignant2** : Deux enseignants (le second est inféré comme polyvalent)
+- **admin1** : Un administrateur
+- **institut1**, **etab1**, **etab2** : Des établissements
+- **formation1** : Une formation en licence
+
+## Applications potentielles
+
+Cette ontologie peut servir à :
+- Modéliser le système éducatif tunisien de manière formelle
+- Faciliter l'interopérabilité entre systèmes d'information éducatifs
+- Permettre des requêtes sémantiques complexes sur les données éducatives
+- Analyser les relations entre différents acteurs du système
+
+## Technologies utilisées
+
+- OWL (Web Ontology Language)
+- SWRL (Semantic Web Rule Language)
+- Protégé (éditeur d'ontologies)
+- Raisonneurs (HermiT, Pellet)
+
+## Fichiers inclus
+
+- **tets.owx** : Ontologie OWL de base
+- **swrl.owx** : Ontologie enrichie avec les règles SWRL
+
+---
+
+*Projet développé dans le cadre d'un cours sur le Web Sémantique*
+
+
