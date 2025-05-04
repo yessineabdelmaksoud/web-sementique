@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.example.org/education-tunisie#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.example.org/education-tunisie#">
+    <Prefix name="" IRI="http://www.semanticweb.org/pc/ontologies/2025/3/untitled-ontology-13/"/>
+    <Prefix name="edu" IRI="http://www.example.org/education-tunisie#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="foaf" IRI="http://xmlns.com/foaf/0.1/"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="Administratif"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Cycle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Doctorat"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Enseignant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Etudiantchercher"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Filière"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Formation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Génie_Civil"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Informatique"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Institut_Supérieur"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Licence"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Lycée"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Master"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Médecine"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Personnes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Université"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="membreetablissement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Établissements"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Étudiant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="aCycle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="aEnsignant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="aEtudiant"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="aFiliere"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="administre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="enseigneDans"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="suitFormation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="étudieDans"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="age"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="annéeInscription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="nom"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="Enseignant1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="admin1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="cycle14"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="etab1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="etudiant1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="filier1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="formation1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="institut1"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="Etudiantchercher"/>
+        <ObjectIntersectionOf>
+            <Class IRI="Enseignant"/>
+            <Class IRI="Étudiant"/>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="membreetablissement"/>
+        <ObjectUnionOf>
+            <Class IRI="Administratif"/>
+            <Class IRI="Enseignant"/>
+            <Class IRI="Étudiant"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="Administratif"/>
+        <Class IRI="Personnes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Administratif"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="administre"/>
+            <Class IRI="Établissements"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Cycle"/>
+        <Class IRI="Formation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Doctorat"/>
+        <Class IRI="Cycle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Enseignant"/>
+        <Class IRI="Personnes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Enseignant"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="enseigneDans"/>
+            <Class IRI="Établissements"/>
+        </ObjectMinCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Etudiantchercher"/>
+        <Class IRI="Personnes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Filière"/>
+        <Class IRI="Formation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Formation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="aCycle"/>
+            <Class IRI="Cycle"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Génie_Civil"/>
+        <Class IRI="Filière"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Informatique"/>
+        <Class IRI="Filière"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Institut_Supérieur"/>
+        <Class IRI="Établissements"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Licence"/>
+        <Class IRI="Cycle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Lycée"/>
+        <Class IRI="Établissements"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Master"/>
+        <Class IRI="Cycle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Médecine"/>
+        <Class IRI="Filière"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Université"/>
+        <Class IRI="Établissements"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="membreetablissement"/>
+        <Class IRI="Personnes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Étudiant"/>
+        <Class IRI="Personnes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Étudiant"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="suitFormation"/>
+            <Class IRI="Formation"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="Formation"/>
+        <Class IRI="Personnes"/>
+        <Class IRI="Établissements"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="Enseignant"/>
+        <NamedIndividual IRI="Enseignant1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Administratif"/>
+        <NamedIndividual IRI="admin1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Licence"/>
+        <NamedIndividual IRI="cycle14"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Établissements"/>
+        <NamedIndividual IRI="etab1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Étudiant"/>
+        <NamedIndividual IRI="etudiant1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Filière"/>
+        <NamedIndividual IRI="filier1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Formation"/>
+        <NamedIndividual IRI="formation1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="Institut_Supérieur"/>
+        <NamedIndividual IRI="institut1"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="enseigneDans"/>
+        <NamedIndividual IRI="Enseignant1"/>
+        <NamedIndividual IRI="institut1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="administre"/>
+        <NamedIndividual IRI="admin1"/>
+        <NamedIndividual IRI="etab1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="suitFormation"/>
+        <NamedIndividual IRI="etudiant1"/>
+        <NamedIndividual IRI="formation1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="étudieDans"/>
+        <NamedIndividual IRI="etudiant1"/>
+        <NamedIndividual IRI="institut1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="aCycle"/>
+        <NamedIndividual IRI="formation1"/>
+        <NamedIndividual IRI="cycle14"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="aFiliere"/>
+        <NamedIndividual IRI="formation1"/>
+        <NamedIndividual IRI="filier1"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="age"/>
+        <NamedIndividual IRI="etudiant1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">21</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="annéeInscription"/>
+        <NamedIndividual IRI="etudiant1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2004-04-12T13:20:00-05:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="nom"/>
+        <NamedIndividual IRI="etudiant1"/>
+        <Literal>&quot;ahmed&quot;</Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="aEnsignant"/>
+        <ObjectProperty IRI="enseigneDans"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="aEtudiant"/>
+        <ObjectProperty IRI="étudieDans"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="aCycle"/>
+        <Class IRI="Formation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="aFiliere"/>
+        <Class IRI="Formation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="administre"/>
+        <Class IRI="Administratif"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="enseigneDans"/>
+        <Class IRI="Enseignant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="suitFormation"/>
+        <Class IRI="Étudiant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="étudieDans"/>
+        <Class IRI="Étudiant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="aCycle"/>
+        <Class IRI="Cycle"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="aFiliere"/>
+        <Class IRI="Filière"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="administre"/>
+        <Class IRI="Établissements"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="enseigneDans"/>
+        <Class IRI="Établissements"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="suitFormation"/>
+        <Class IRI="Formation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="étudieDans"/>
+        <Class IRI="Établissements"/>
+    </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="age"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="annéeInscription"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="nom"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="age"/>
+        <Class IRI="Étudiant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="annéeInscription"/>
+        <Class IRI="Étudiant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="nom"/>
+        <Class IRI="Personnes"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="age"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="annéeInscription"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="nom"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
