@@ -242,4 +242,64 @@ WHERE {
 
 > Nous avons aussi testé nos requêtes SPARQL via un script Python utilisant la bibliothèque rdflib
 ![Individus](https://github.com/yessineabdelmaksoud/web-sementique/blob/main/systeme-educatif-tn/capture/requetes.png)
+---
+## Visualisation de l'ontologie :
+> Voici une représentation visuelle de l'ontologie du education en tunisie :
+![Individus](https://github.com/yessineabdelmaksoud/web-sementique/blob/main/systeme-educatif-tn/capture/view.png)
+> 
+
+##  Restrictions OWL
+
+L’ontologie a été enrichie par des **restrictions OWL** sur les propriétés, permettant de mieux définir les relations entre les concepts et d’imposer des contraintes logiques. Voici les principales restrictions appliquées :
+
+---
+
+### Sur la classe `Étudiant`
+
+- `Étudiant ⊆ suitFormation exactly 1 Formation`  
+  ➝ Un étudiant suit **exactement une** formation.
+
+- `Étudiant ⊆ étudieDans some Établissement`  
+  ➝ Un étudiant est lié à **au moins un** établissement.
+
+- `Étudiant ⊆ nom exactly 1 xsd:string`  
+  ➝ Un étudiant possède **exactement un nom**.
+
+- `Étudiant ⊆ age exactly 1 xsd:integer`  
+  ➝ Un étudiant possède **exactement un âge**.
+
+- `Étudiant ⊆ annéeInscription exactly 1 xsd:gYear`  
+  ➝ Un étudiant possède **exactement une année d’inscription**.
+
+---
+
+###  Sur la classe `Enseignant`
+
+- `Enseignant ⊆ enseigneDans some Établissement`  
+  ➝ Un enseignant enseigne dans **au moins un** établissement.
+
+---
+
+###  Sur la classe `Administratif`
+
+- `Administratif ⊆ administre some Établissement`  
+  ➝ Un personnel administratif administre **au moins un** établissement.
+
+---
+
+### Sur la classe `Formation`
+
+- `Formation ⊆ aCycle some Cycle`  
+  ➝ Une formation est **associée à un cycle**.
+
+- `Formation ⊆ aFiliere some Filière`  
+  ➝ Une formation **appartient à une filière**.
+
+---
+
+###  Sur les propriétés de données (littérales)
+
+- `nom` : exactement **1 valeur**, de type `xsd:string`, pour toute `Personne`
+- `age` : exactement **1 valeur**, de type `xsd:integer`, pour un `Étudiant`
+- `annéeInscription` : exactement **1 valeur**, de type `xsd:gYear`, pour un `Étudiant`
 
